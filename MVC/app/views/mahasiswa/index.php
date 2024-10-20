@@ -17,13 +17,16 @@
                 <?php foreach( $data['mhs'] as $mhs ): ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <?= $mhs['nama']; ?>
-                    <a href=" <?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>"  class="badge text-bg-primary">detail</a>
+                    <div>
+                        <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge text-bg-primary me-1">detail</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge text-bg-danger" onclick="return confirm('yakin?');">hapus</a>
+                    </div>
                 </li>
                 <?php endforeach; ?>
             </ul>   
         </div>
     </div>
-</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
